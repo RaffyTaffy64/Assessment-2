@@ -13,7 +13,19 @@
 //     { firstName: 'Karlach', lastName: 'Cliffgate', location: 'Avernus' }
 //   ]);
 //   => ['Gale Dekarios', 'Wyll Ravengard', 'Karlach Cliffgate'];
-function getNames(people) {}
+
+let people = [
+  {firstName: `Gale`, lastName: `Dekarios`, location: `Waterdeep`} 
+  {firstName: `Wyll`, lastName: `Ravengard`, location: `Baldur's Gate`}
+  {firstName: `Karlach`, lastname: `Cliffgate`, location: `Avernus`}
+]
+
+let firstAndLast = people.map(function(person){
+  return {firstName: person.firstName, lastName: person.lastName}
+
+  function getNames(people)
+})
+
 
 // Given an object representing a person, return their full name (first name and last name).
 // You MUST use object destructuring in your solution.
@@ -24,7 +36,11 @@ function getNames(people) {}
 // Ex.:
 //   getName({ firstName: 'Gale', lastName: 'Dekarios', location: 'Waterdeep' });
 //   => 'Gale Dekarios'
-function getNameUsingDestructuring(person) {}
+function getNameUsingDestructuring(person) {
+
+    const[firstName, lastName]
+    console.log(firstName + lastName)
+}
 
 // Given an array of objects representing people, return a new array of the
 // people matching the given location.
@@ -43,7 +59,17 @@ function getNameUsingDestructuring(person) {}
 //     { firstName: 'Wyll', lastName: 'Ravengard', location: "Baldur's Gate" },
 //     { firstName: 'Astarion', lastName: 'Ancunin', location: "Baldur's Gate" }
 //   ];
-function getPeopleByLocation(people, location) {}
+function getPeopleByLocation(people, location) {
+
+  const locatedPeople = []
+
+  for (const person of people) {
+    if (person.location === `Baldur's Gate`) {
+      locatedPeople.push(person)
+    }
+  }
+  return locatedPeople
+}
 
 // Translate a phrase to pirate talk.
 //
@@ -72,7 +98,17 @@ const EN_PIRATE_LOOKUP = {
   hello: 'ahoy',
 };
 
-function translateToPirateTalk(phrase) {}
+function translateToPirateTalk(phrase) {
+  const words = phrase.split(``)
+  const translateWords = words.map(word => {
+    return EN_PIRATE_LOOKUP[word] || word;
+  })
+  const translatedPhrase = translatedWords.join(``)
+
+  return translatedPhrase
+}
+console.log(translateToPirateTalk())
+
 
 // Return the number of occurrences of each word in a string.
 // This function doesn't handle punctuation and is case-sensitive, so you can
